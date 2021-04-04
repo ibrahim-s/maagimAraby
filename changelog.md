@@ -1,3 +1,3 @@
-## Changes for 1.0 .
+## Changes for 1.1 .
 
-*	Initial version.
+*	Fix some bug in Arabic translation.

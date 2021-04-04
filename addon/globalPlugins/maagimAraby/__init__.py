@@ -24,6 +24,7 @@ config.conf.spec["maagimAraby"]= configspec
 INSTANCE= None
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
+	# Translators: Category in input gestures dialog
 	scriptCategory= _('Maagim Araby')
 
 	def __init__(self, *args, **kwargs):

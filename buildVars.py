@@ -14,14 +14,14 @@ addon_info = {
 	"addon_name" : "maagimAraby",
 	# Add-on summary, usually the user visible name of the addon.
 	# Translators: Summary for this add-on to be shown on installation and add-on information.
-	"addon_summary" : "Maagim Araby",
+	"addon_summary" : _("Maagim Araby"),
 	# Add-on description
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-	"addon_description" : _("""	This addon helps get the meaning of arabic words from several arabic dictionaries on www.almaany.com website.
-	Press nvda+Alt+M, Maagim Araby dialog will be displayed, and you will be standing on an edit field.
-	If when pressing this command, you were standing on a selected word, the word will be put in the edit field.
-	Otherwise, enter in the edit field the word you want, tab an choose the dictionary you want and press enter.
-	The meaning of the word will be displayed in a separate browseable window."""),
+	"addon_description" : _("""This addon helps get the meaning of arabic words from several arabic dictionaries on www.almaany.com website.
+Press nvda+Alt+M, Maagim Araby dialog will be displayed, and you will be standing on an edit field.
+If when pressing this command, you were standing on a selected word, the word will be put in the edit field.
+Otherwise, enter in the edit field the word you want, tab an choose the dictionary you want and press enter.
+The meaning of the word will be displayed in a separate browseable window."""),
 	# version
 	"addon_version" : ,
 	# Author(s)
