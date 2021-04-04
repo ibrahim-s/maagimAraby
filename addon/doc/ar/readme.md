@@ -1,7 +1,7 @@
 # المعاجم العربية #
 
 المطَوِّر: ابراهيم حمادة  
-تحميل [الإصدار 1.0][1]  
+تحميل [الإصدار 1.1][1]  
 
 هذه الإضافة تساعدك على الحصول على مَعاني الكلمات العربية, من خلال موقع www.almaany.com.  
 [almaany.com](https://www.almaany.com/ar/dict/ar-ar/ ).
@@ -30,4 +30,4 @@
 
 *	النسخة الأولى.
 
-[1]: https://github.com/ibrahim-s/maagimAraby/releases/download/1.0/maagimAraby-1.0.nvda-addon
+[1]: https://github.com/ibrahim-s/maagimAraby/releases/download/1.1/maagimAraby-1.1.nvda-addon

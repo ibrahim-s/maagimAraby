@@ -1,7 +1,7 @@
 # Maagim Araby #
 
 Author: Ibrahim Hamadeh  
-Download [version 1.0][1]  
+Download [version 1.1][1]  
 
 This addon helps you get the meaning of single arabic words or phrases  
 from several Arabic dictionaries present on almaany.com website.  
@@ -31,4 +31,4 @@ please remember you can close this window only, with control+w or alt+f4.
 
 *	Initial version.
 
-[1]: https://github.com/ibrahim-s/maagimAraby/releases/download/1.0/maagimAraby-1.0.nvda-addon
+[1]: https://github.com/ibrahim-s/maagimAraby/releases/download/1.1/maagimAraby-1.1.nvda-addon
