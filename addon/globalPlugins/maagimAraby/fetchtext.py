@@ -4,11 +4,17 @@
 
 import textInfos
 import urllib
-import random
 import re
 import api, ui
 from logHandler import log
 import threading
+import os, sys
+
+currentPath= os.path.abspath(os.path.dirname(__file__))
+sys.path.append(currentPath)
+from user_agent import generate_user_agent
+del sys.path[-1]
+
 import addonHandler
 addonHandler.initTranslation()
 
@@ -29,13 +35,6 @@ def isSelectedText():
 	else:
 		return info.text
 
-#list of fake user agent
-userAgentList=['Mozilla/5.0', 'Safari/537.36', 'Chrome/67.0.3396.99', 'iexplore/11.0.9600.19080', 'Trident/7.0', 'SeaMonkey/2.40', 'Wyzo/3.6.4.1', 'OPR/54.0.2952.64']
-'''
-regex1= '(<h1 class="section">[\s\S]+<h1 class="section">[\s\S]+?)<h[23456]'
-regex2= '(<h1 class="section">[\s\S]+?)<h[23456]'
-regex3= '(<h1>[\s\S]+?)<h[23456]'
-'''
 regex1= '(<h1 class="section">[\s\S]+<h1 class="section">[\s\S]+?)<h[2-6]'
 regex2= '(<h1 class="section">[\s\S]+?)<h[2-6]'
 regex3= '(<h1>[\s\S]+?<h2>[\s\S]+?</h2>[\s\S]+?)<h[2-6]'
@@ -60,7 +59,8 @@ class MyThread(threading.Thread):
 		url= self.base_url+ data
 		#log.info(url)
 		request= urllib.request.Request(url)
-		request.add_header('User-Agent', random.choice(userAgentList))
+		userAgent= generate_user_agent()
+		request.add_header('User-Agent', userAgent)
 		try:
 			handle = urllib.request.urlopen(request)
 			html= handle.read().decode(handle.headers.get_content_charset())
