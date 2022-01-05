@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#This module is responsible for displaying MaagimAraby dialog
+# This module is responsible for displaying MaagimAraby dialog
 
 import wx
 import queueHandler

@@ -83,5 +83,5 @@ class MyThread(threading.Thread):
 				self.error= str(e)
 				#raise e
 			else:
-				page= content +"<p> <a href=%s>"%(url) +"Look for the meaning on the web site</a></p>"
+				page= content + "<p> <a href=%s>"%(url) + "Look for the meaning on the web site</a></p>"
 				self.meaning= page
