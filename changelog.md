@@ -1,4 +1,4 @@
-## Changes for 1.2 .
+### Changes for 1.3 ###
 
-*	Fiix a bug happened lately in the addon, most likely due to changes in server
-The bug was fixed by removing the old user agent, and use instead user_agent module.
+*	Make the addon compatible with NVDA 2022.1.
+*	Removing pieces of unWanted text from the page, that was added recently, by using regular expression and replacing it with an empty string.
