@@ -5,18 +5,18 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 'maagimAraby' '1.0'\n"
+"Project-Id-Version: 'maagimAraby' '1.5'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@freelists.org'\n"
-"POT-Creation-Date: 2021-04-04 10:28+0300\n"
-"PO-Revision-Date: 2021-04-04 21:12+0300\n"
+"POT-Creation-Date: 2023-12-07 13:56+0200\n"
+"PO-Revision-Date: 2023-12-07 14:27+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n"
-"%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
 "X-Generator: Poedit 2.0.7\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
@@ -24,38 +24,43 @@ msgstr ""
 #. Translators: title of the dialog
 #. Add-on summary, usually the user visible name of the addon.
 #. Translators: Summary for this add-on to be shown on installation and add-on information.
-#: addon\globalPlugins\maagimAraby\__init__.py:28
-#: addon\globalPlugins\maagimAraby\__init__.py:59
+#: addon\globalPlugins\maagimAraby\__init__.py:32
+#: addon\globalPlugins\maagimAraby\__init__.py:76
 #: addon\globalPlugins\maagimAraby\myDialog.py:37 buildVars.py:17
 msgid "Maagim Araby"
 msgstr "المعاجم العربية"
 
-#: addon\globalPlugins\maagimAraby\__init__.py:50
+#: addon\globalPlugins\maagimAraby\__init__.py:67
 msgid "Opens Maagim araby dialog to get meaning of arabic words."
 msgstr "فتح محاورةْ المعاجم العربية, للحصول على معنى الكلمة العربية"
 
 #. Translators: Type of windows to display translation result.
-#: addon\globalPlugins\maagimAraby\__init__.py:65
+#: addon\globalPlugins\maagimAraby\__init__.py:82
 msgid "Default full browser"
 msgstr "المتصفح الإفتراضي العادي"
 
-#: addon\globalPlugins\maagimAraby\__init__.py:65
+#: addon\globalPlugins\maagimAraby\__init__.py:82
 msgid "Browser window only"
 msgstr "نافذةْ المتصفح فقط"
 
-#: addon\globalPlugins\maagimAraby\__init__.py:65
+#: addon\globalPlugins\maagimAraby\__init__.py:82
 msgid "NVDA browseable message box(choose it after testing)"
 msgstr "نافذةْ NVDA browseable message box(مِن الأفضل تجربتها قبل الإختيار)"
 
 #. Translators: label of cumbo box to choose type of window to display result.
-#: addon\globalPlugins\maagimAraby\__init__.py:68
+#: addon\globalPlugins\maagimAraby\__init__.py:85
 msgid "Choose type of window To Display Result:"
 msgstr "اختيار نافذةْ النتائج:"
 
 #. Translators: label of the check box
-#: addon\globalPlugins\maagimAraby\__init__.py:73
+#: addon\globalPlugins\maagimAraby\__init__.py:90
 msgid "&Close Maagim Araby Dialog after requesting translation"
 msgstr "إغلاق محاورةْ المعاجم العربية بعد طلب معنى الكلمة"
+
+#. Translators: label of the check box
+#: addon\globalPlugins\maagimAraby\__init__.py:95
+msgid "Check for update on startup"
+msgstr "تَحقق من وجود تحديث للإضافة عند بدء التشغيل"
 
 #: addon\globalPlugins\maagimAraby\myDialog.py:76
 msgid "Enter a word please"
@@ -77,6 +82,29 @@ msgstr "إلغاء"
 msgid "Sorry, Service not available({})"
 msgstr "عُذرا, الخدمة غير متاحة({})"
 
+#. Translators: Message dialog box to ask user if wants to update.
+#: addon\globalPlugins\maagimAraby\update.py:115
+msgid ""
+"It is available a new version {} of this add-on.\n"
+" Do you want to update?"
+msgstr ""
+"يتوفر إصدار جديد {} من هذه الإضافة.\n"
+" هل تريد التحديث؟"
+
+#: addon\globalPlugins\maagimAraby\update.py:116
+msgid "{}-Update"
+msgstr "{}-تحديث"
+
+#. Translators: Message dialog box to inform user that the add-on is not compatible
+#: addon\globalPlugins\maagimAraby\update.py:152
+msgid ""
+"This new version of this add-on is not compatible with your version of "
+"NVDA.\n"
+" The update process will be terminated."
+msgstr ""
+"هذا الإصدار الجديد من هذه الإضافة غير متوافق مع إصدار NVDA لديك.\n"
+" سيتم إنهاء عملية التحديث."
+
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 #: buildVars.py:20
@@ -85,19 +113,19 @@ msgid ""
 "dictionaries on www.almaany.com website.\n"
 "Press nvda+Alt+M, Maagim Araby dialog will be displayed, and you will be "
 "standing on an edit field.\n"
-"If when pressing this command, you were standing on a selected word, the word "
-"will be put in the edit field.\n"
+"If when pressing this command, you were standing on a selected word, the "
+"word will be put in the edit field.\n"
 "Otherwise, enter in the edit field the word you want, tab an choose the "
 "dictionary you want and press enter.\n"
 "The meaning of the word will be displayed in a separate browseable window."
 msgstr ""
-"هذه الإضافة تساعدك على الحصول على معاني الكلمات العربية في معاجم عربية عديدة من "
-"خلال موقع www.almaany.com.\n"
-"بالضغط على الإختصار nvda+Alt+M, ستظهر لك محاورةْ المعاجم العربية, و ستكون واقفا "
-"على مربع تحرير.  \n"
+"هذه الإضافة تساعدك على الحصول على معاني الكلمات العربية في معاجم عربية عديدة "
+"من خلال موقع www.almaany.com.\n"
+"بالضغط على الإختصار nvda+Alt+M, ستظهر لك محاورةْ المعاجم العربية, و ستكون "
+"واقفا على مربع تحرير.  \n"
 "و قَبلَ ضغط الإختصار, إذا كنت واقفا على كلمة محددة, هذه الكلمة ستظهر في مربع "
 "التحرير  \n"
-"أو, اكتب في مربع التحرير الكلمة التي تريد, ثم إضغط تاب لتقف على قائمةْ المعاجم "
-"إختر منها القاموس الذي تريد و اضغطْ عليه إنتر.  \n"
+"أو, اكتب في مربع التحرير الكلمة التي تريد, ثم إضغط تاب لتقف على قائمةْ "
+"المعاجم إختر منها القاموس الذي تريد و اضغطْ عليه إنتر.  \n"
 "و بعد ذاك سيظهر معنى الكلمة في نافذةْ تستطيع قراءتها و التنقل فيها كما في "
 "المتصفح.  "

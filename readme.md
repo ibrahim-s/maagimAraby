@@ -2,7 +2,7 @@
 
 *	Author: Ibrahim Hamadeh
 *	NVDA compatibility: 2019.3 and later
-*	Download [version 1.4][1]
+*	Download [version 1.5][1]
 
 This addon helps you get the meaning of single arabic words or phrases  
 from several Arabic dictionaries present on almaany.com website.  
@@ -27,7 +27,14 @@ choosing this, the result will be displayed in your default ordinary full browse
 please remember you can close this window only, with control+w or alt+f4.  
 	3.	the third, is the native NVDA message box, used it only after testing and if it suits you, for in our experience it smetimes make NVDA freezes.  
 *	From that setting dialog, you can also choose whether to close Maagim Araby dialog after requesting the meaning of word or not.  
+*	Lastly you got a check box, to enable or disable the auto update of addon on start of NVDA.  
+It is enabled by default, and you may disable it if you wish.
  
+## Changes for 1.5 ##
+
+*	Add auto update feature, that checks for new versions on startup.
+*	Add check box for auto update in setting panel, it is activated by default, and you can deactivate it.
+
 ## Changes for 1.4 ##
 
 *	Update last tested version to Make the addon compatible with NVDA 2023.1.
@@ -46,4 +53,4 @@ The bug was fixed by removing the old user agent, and use instead user_agent mod
 
 *	Initial version.
 
-[1]: https://github.com/ibrahim-s/maagimAraby/releases/download/1.4/maagimAraby-1.4.nvda-addon
+[1]: https://github.com/ibrahim-s/maagimAraby/releases/download/1.5/maagimAraby-1.5.nvda-addon

@@ -23,7 +23,7 @@ If when pressing this command, you were standing on a selected word, the word wi
 Otherwise, enter in the edit field the word you want, tab an choose the dictionary you want and press enter.
 The meaning of the word will be displayed in a separate browseable window."""),
 	# version
-	"addon_version": "1.4",
+	"addon_version": "1.5",
 	# Author(s)
 	"addon_author" : u"Ibrahim Hamadeh<ibra.hamadeh@hotmail.com>",
 	# URL for the add-on documentation support

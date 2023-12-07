@@ -1,3 +1,4 @@
-### Changes for 1.4 ###
+### Changes for 1.5 ###
 
-*	Make the addon compatible with NVDA 2023.1.
+*	Add auto update feature, that checks for new versions on startup.
+*	Add check box for auto update in setting panel, it is activated by default, and you can deactivate it.

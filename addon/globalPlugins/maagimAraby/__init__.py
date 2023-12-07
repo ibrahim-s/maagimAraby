@@ -8,16 +8,20 @@
 import gui, wx
 from gui import guiHelper
 import config
+import core
 import globalPluginHandler
 from .myDialog import MyDialog
+from .update import Initialize
 from logHandler import log
+
 import addonHandler
 addonHandler.initTranslation()
 
 #default configuration 
 configspec={
 	"windowType": "integer(default=0)",
-	"closeDialogAfterRequiringTranslation": "boolean(default= False)"
+	"closeDialogAfterRequiringTranslation": "boolean(default= False)",
+	"autoUpdate": "boolean(default= True)"
 }
 config.conf.spec["maagimAraby"]= configspec
 
@@ -31,6 +35,19 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		super(GlobalPlugin, self).__init__(*args, **kwargs)
 
 		gui.settingsDialogs.NVDASettingsDialog.categoryClasses.append(DictionariesAlmaany)
+		# To allow check for update after NVDA started.
+		core.postNvdaStartup.register(self.checkForUpdate)
+
+	def checkForUpdate(self):
+		if not config.conf["maagimAraby"]["autoUpdate"]:
+			# Auto update is False
+			return
+		# starting the update process...
+		def checkWithDelay():
+			_beginChecking = Initialize()
+			_beginChecking.start()
+		wx.CallLater(7000, checkWithDelay)
+
 
 	def terminate(self):
 			gui.settingsDialogs.NVDASettingsDialog.categoryClasses.remove(DictionariesAlmaany)
@@ -54,7 +71,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	}
 
 #make  SettingsPanel  class
-class DictionariesAlmaany(gui.SettingsPanel):
+class DictionariesAlmaany(gui.settingsDialogs.SettingsPanel):
 	# Translators: title of the dialog
 	title= _("Maagim Araby")
 
@@ -74,6 +91,12 @@ class DictionariesAlmaany(gui.SettingsPanel):
 		self.closeDialogCheckBox.SetValue(config.conf["maagimAraby"]["closeDialogAfterRequiringTranslation"])
 		settingsSizerHelper.addItem(self.closeDialogCheckBox)
 
+		# Translators: label of the check box 
+		self.updateCheckBox=wx.CheckBox(self,label=_("Check for update on startup"))
+		settingsSizerHelper.addItem(self.updateCheckBox)
+		self.updateCheckBox.SetValue(config.conf["maagimAraby"]["autoUpdate"])
+
 	def onSave(self):
 		config.conf["maagimAraby"]["windowType"]= self.resultWindowComboBox.GetSelection()
 		config.conf["maagimAraby"]["closeDialogAfterRequiringTranslation"]= self.closeDialogCheckBox.IsChecked() 
+		config.conf["maagimAraby"]["autoUpdate"]= self.closeDialogCheckBox.IsChecked() 
