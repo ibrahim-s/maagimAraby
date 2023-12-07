@@ -112,8 +112,8 @@ class AddonFlow(Thread):
 			addonDownloadedName = str(downloadUrl.split("/")[-1:]).replace("[", "").replace("\'", "").replace("]", "")
 
 			# Translators: Message dialog box to ask user if wants to update.
-			if gui.messageBox(_("It is available a new version {} of this add-on.\n Do you want to update?".format(newVersion)),
-			_("{}-Update".format(myAddon.manifest["summary"])),
+			if gui.messageBox(_("It is available a new version {} of this add-on.\n Do you want to update?").format(newVersion),
+			_("{}-Update").format(myAddon.manifest["summary"]),
 			style=wx.ICON_QUESTION|wx.YES_NO) == wx.YES:
 				download = Thread(target = AddonFlow.downloadAddon)
 				download.setDaemon(True)
@@ -149,7 +149,8 @@ class AddonFlow(Thread):
 		# It is not compatible, so do not install and inform user
 		else:
 			# Translators: Message dialog box to inform user that the add-on is not compatible
-			gui.messageBox(_("This new version of this add-on is not compatible with your version of NVDA.\n The update process will be terminated."), myAddon.manifest["summary"], style=wx.ICON_WARNING)
+			gui.messageBox(_("This new version of this add-on is not compatible with your version of NVDA.\n The update process will be terminated."),
+			myAddon.manifest["summary"], style=wx.ICON_WARNING)
 			AddonFlow.doNothing()
 
 	def install():
