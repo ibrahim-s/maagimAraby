@@ -99,4 +99,4 @@ class DictionariesAlmaany(gui.settingsDialogs.SettingsPanel):
 	def onSave(self):
 		config.conf["maagimAraby"]["windowType"]= self.resultWindowComboBox.GetSelection()
 		config.conf["maagimAraby"]["closeDialogAfterRequiringTranslation"]= self.closeDialogCheckBox.IsChecked() 
-		config.conf["maagimAraby"]["autoUpdate"]= self.closeDialogCheckBox.IsChecked() 
+		config.conf["maagimAraby"]["autoUpdate"]= self.updateCheckBox.IsChecked() 
