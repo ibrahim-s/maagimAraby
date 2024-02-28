@@ -34,7 +34,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def __init__(self, *args, **kwargs):
 		super(GlobalPlugin, self).__init__(*args, **kwargs)
 
-		gui.settingsDialogs.NVDASettingsDialog.categoryClasses.append(DictionariesAlmaany)
+		gui.settingsDialogs.NVDASettingsDialog.categoryClasses.append(MaagimAraby)
 		# To allow check for update after NVDA started.
 		core.postNvdaStartup.register(self.checkForUpdate)
 
@@ -42,15 +42,14 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		if not config.conf["maagimAraby"]["autoUpdate"]:
 			# Auto update is False
 			return
-		# starting the update process...
+		# starting the update process
 		def checkWithDelay():
 			_beginChecking = Initialize()
 			_beginChecking.start()
 		wx.CallLater(7000, checkWithDelay)
 
-
 	def terminate(self):
-			gui.settingsDialogs.NVDASettingsDialog.categoryClasses.remove(DictionariesAlmaany)
+			gui.settingsDialogs.NVDASettingsDialog.categoryClasses.remove(MaagimAraby)
 
 	def script_showDialog(self, gesture):
 		global INSTANCE
@@ -71,7 +70,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	}
 
 #make  SettingsPanel  class
-class DictionariesAlmaany(gui.settingsDialogs.SettingsPanel):
+class MaagimAraby(gui.settingsDialogs.SettingsPanel):
 	# Translators: title of the dialog
 	title= _("Maagim Araby")
 

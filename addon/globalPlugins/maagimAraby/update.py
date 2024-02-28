@@ -101,7 +101,11 @@ class AddonFlow(Thread):
 		if globalVars.appArgs.secure or config.isAppX or globalVars.appArgs.launcher:
 			AddonFlow.doNothing()
 		request = urllib.request.Request(urlRepos)
-		content = urllib.request.urlopen(request).read()
+		try:
+			content = urllib.request.urlopen(request).read()
+		except:
+			log.info('Error fetching Maagim Araby addon data', exc_info= True)
+			return
 		githubApi = json.loads(content.decode('utf-8'))
 		newVersion= githubApi[0]["tag_name"].strip('v')
 		currVersion= myAddon.manifest["version"]
@@ -169,6 +173,7 @@ class AddonFlow(Thread):
 		if tempPath:
 			os.unlink(tempPath)
 		# to restart NVDA
+		from gui import addonGui
 		gui.addonGui.promptUserForRestart()
 
 	def doNothing():
