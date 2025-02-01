@@ -36,8 +36,10 @@ def isSelectedText():
 		return info.text
 
 regex1= '(<h1 class="section">[\s\S]+<h1 class="section">[\s\S]+?)<h[2-6]'
-regex2= '(<h1 class="section">[\s\S]+?)<h[2-6]'
-regex3= '(<h1>[\s\S]+?<h2>[\s\S]+?</h2>[\s\S]+?)<h[2-6]'
+#regex2= '(<h1 class="section">[\s\S]+?)<h[2-6]'
+regex2= '(<h1 id ="meaning" class="section">[\s\S]+?)<h[2-6]'
+#regex3= '(<h1>[\s\S]+?<h2>[\s\S]+?</h2>[\s\S]+?)<h[2-6]'
+regex3= '(<div class="panel-body">[\s\S]+?)<h[2-6]'
 
 class MyThread(threading.Thread):
 	def __init__(self, text, query, base_url):

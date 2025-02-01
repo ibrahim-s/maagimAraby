@@ -7,7 +7,9 @@
 
 import gui, wx
 from gui import guiHelper
+from gui.message import isModalMessageBoxActive
 import config
+import globalVars
 import core
 import globalPluginHandler
 from .myDialog import MyDialog
@@ -41,6 +43,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def checkForUpdate(self):
 		if not config.conf["maagimAraby"]["autoUpdate"]:
 			# Auto update is False
+			return
+		# Do not check for update in these conditions.
+		if globalVars.appArgs.secure or globalVars.appArgs.launcher or isModalMessageBoxActive():
 			return
 		# starting the update process
 		def checkWithDelay():
